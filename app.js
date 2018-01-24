@@ -3,9 +3,15 @@ const express =require('express');
 //int appCodeName
 const app = express();
 
+//views location
+app.set('views',__dirname + '/views');
+//set template engine
+app.set('view engine', 'ejs');
+
+
 //routes
 app.get('/', function(req, res){
-	res.send("Index.page");
+	res.render("index", {name: "faqja fillestare", title:"index"});
 });
 
 //runing app
